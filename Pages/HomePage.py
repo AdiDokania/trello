@@ -30,3 +30,6 @@ class HomePage(BasePage):
         self.do_click(self.AddCardBtn)
         self.do_send_keys(self.CardName, TestData.CardName)
         self.do_click(self.NewCardBtn)
+
+    def getTitle(self):
+        return self.get_title()

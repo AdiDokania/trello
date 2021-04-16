@@ -28,16 +28,28 @@ def login_to_application(context):
     lpage.loginToApplication()
 
 
-@then('Create New Board')
+@when('Create New Board')
 def create_new_board(context):
     hpage = HomePage(context.driver)
-    time.sleep(50)
+    time.sleep(10)
     hpage.goToBoards()
 
 
-@then('Add New List')
+@when('Add New List')
 def create_new_list(context):
     hpage = HomePage(context.driver)
-    time.sleep(10)
+    time.sleep(2)
     hpage.createList()
-    time.sleep(10)
+    time.sleep(2)
+
+@then('Validate Title')
+def assert_title(context):
+    hpage = HomePage(context.driver)
+    HTitle = hpage.getTitle()
+    if HTitle == TestData.BoardTitle:
+        assert True
+        mylogger.info(" Title Verified")
+
+    else:
+        mylogger.info(" Title Not Verified ")
+        assert False

@@ -25,24 +25,25 @@ def launch_browser(context):
 def login_to_application(context):
     lpage = LoginPage(context.driver)
     lpage.loginToApplication()
+    context.driver.save_screenshot(".//Screenshots//trello.png")
 
 
 @then('Create A New Board')
 def create_new_board(context):
     hpage = HomePage(context.driver)
-    time.sleep(50)
+    time.sleep(20)
     hpage.goToBoards()
 
 
 @then('Add A New List')
 def create_new_list(context):
     hpage = HomePage(context.driver)
-    time.sleep(10)
+    time.sleep(5)
     hpage.createList()
-    time.sleep(10)
+    time.sleep(5)
 
 @then('Add new Card')
 def create_new_card(context):
     hpage = HomePage(context.driver)
     hpage.createCard()
-    time.sleep(10)
+    time.sleep(5)

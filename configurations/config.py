@@ -8,3 +8,8 @@ class TestData:
     BoardTitle ='Test'
     ListName = 'List1'
     CardName = 'Hello'
+
+
+#behave --no-capture Features/createCard.feature
+#behave --format=allure_behave.formatter:AllureFormatter -o Reports
+#allure generate C:\mygit-hub_projects\trello\Reports --clean -o allure-report
